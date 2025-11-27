@@ -18,7 +18,16 @@
         <a class="logo" href="/">
           <img src="assets/img/logo.svg" alt="Aquatec Logo" width="140" height="36" />
         </a>
-        <nav class="nav" aria-label="Hauptnavigation">
+        
+        <!-- Burger Button für Mobile -->
+        <button class="mobile-menu-toggle" aria-label="Menü öffnen" aria-expanded="false" aria-controls="mobile-menu">
+          <span class="burger-line"></span>
+          <span class="burger-line"></span>
+          <span class="burger-line"></span>
+        </button>
+        
+        <!-- Desktop Navigation -->
+        <nav class="nav nav--desktop" aria-label="Hauptnavigation">
           <ul>
             <li><a href="#vorteile">Vorteile</a></li>
             <li><a href="#bewertungen">Bewertungen</a></li>
@@ -29,27 +38,84 @@
       </div>
     </header>
 
+    <!-- Mobile Navigation Overlay - Moved outside header -->
+    <div class="mobile-menu" id="mobile-menu" aria-hidden="true">
+      <div class="mobile-menu__backdrop"></div>
+      <nav class="mobile-menu__content" role="navigation" aria-label="Mobile Navigation">
+        <div class="mobile-menu__header">
+          <img src="assets/img/logo.svg" alt="Aquatec Logo" width="120" height="31" />
+          <button class="mobile-menu__close" aria-label="Menü schließen">
+            <span class="close-icon">×</span>
+          </button>
+        </div>
+        <ul class="mobile-menu__list">
+          <li class="mobile-menu__item">
+            <a href="#vorteile" class="mobile-menu__link">
+              <span class="mobile-menu__icon">✓</span>
+              <span class="mobile-menu__text">Vorteile</span>
+            </a>
+          </li>
+          <li class="mobile-menu__item">
+            <a href="#bewertungen" class="mobile-menu__link">
+              <span class="mobile-menu__icon">⭐</span>
+              <span class="mobile-menu__text">Bewertungen</span>
+            </a>
+          </li>
+          <li class="mobile-menu__item">
+            <a href="#anfrage" class="mobile-menu__link">
+              <span class="mobile-menu__icon">✉</span>
+              <span class="mobile-menu__text">Kontakt</span>
+            </a>
+          </li>
+          <li class="mobile-menu__item">
+            <a href="impressum.html" class="mobile-menu__link">
+              <span class="mobile-menu__icon">ℹ</span>
+              <span class="mobile-menu__text">Impressum</span>
+            </a>
+          </li>
+        </ul>
+        <div class="mobile-menu__footer">
+          <div class="mobile-menu__contact">
+            <p>Kontaktieren Sie uns:</p>
+            <a href="tel:+49123456789" class="mobile-menu__phone">📞 +49 123 456 789</a>
+          </div>
+        </div>
+      </nav>
+    </div>
+
     <main id="main">
       <!-- Hero Banner Full Width -->
       <section class="hero" role="region" aria-label="Einführung">
-        <div class="hero__content container">
-          <div class="hero__text">
-            <h1>WC-Aufsatz mit automatischer Bidet Wascheinrichtung und Warmlufttrocknung</h1>
-            <p>Aquatec® Pure – Macht aus jeder Standard-Toilette eine hygienische und komfortable Komplettlösung für die Intimpflege.</p>
-            <p>Der Toilettenaufsatz bietet eine sanfte Reinigung mit temperierbarem Wasserstrahl, optionaler Damenfunktion und regulierbarer Warmlufttrocknung. Die beheizte Sitzbrille wird durch Körperkontakt aktiviert. Alle Funktionen sind bequem per Fernbedienung oder direkt am Sitz steuerbar.</p>
-            <a class="btn btn-primary" href="#anfrage">Jetzt anfragen</a>
-          </div>
-          <div class="hero__image">
-            <img src="assets/img/bidet.png" alt="Aquatec WC-Aufsatz mit automatischer Bidet Wascheinrichtung" width="500" height="400" />
-          </div>
-        </div>
-      </section>
+        <div class="hero-overlay"></div>
+        <div class="container">
+          <div class="hero__content">
+            <div class="hero__text">
+              <span class="hero-badge">
+                <span class="badge-text">Premium Qualität</span>
+                <span class="badge-pulse"></span>
+              </span>
+              <h1>WC-Aufsatz mit automatischer Bidet Wascheinrichtung und Warmlufttrocknung</h1>
+              <p class="hero-subtitle">Aquatec® Pure – Macht aus jeder Standard-Toilette eine hygienische und komfortable Komplettlösung für die Intimpflege.</p>
+              <p class="hero-description">Der Toilettenaufsatz bietet eine sanfte Reinigung mit temperierbarem Wasserstrahl, optionaler Damenfunktion und regulierbarer Warmlufttrocknung. Die beheizte Sitzbrille wird durch Körperkontakt aktiviert. Alle Funktionen sind bequem per Fernbedienung oder direkt am Sitz steuerbar.</p>
 
-      <!-- Secondary full-width banner -->
-      <section class="banner banner--alt" aria-label="Angebot">
-        <div class="container banner__content">
-          <h2>Qualität, die überzeugt</h2>
-          <p>Robuste Materialien, einfache Montage und zeitloses Design.</p>
+
+              <div class="hero-actions">
+                <a href="#anfrage" class="btn-primary">
+                  <span class="btn-text">Jetzt anfragen</span>
+                  <span class="btn-arrow">→</span>
+                </a>
+                <a href="tel:+49123456789" class="btn-outline">
+                  <span class="btn-icon">📞</span>
+                  <span class="btn-text">Anrufen</span>
+                </a>
+              </div>
+
+            </div>
+            <div class="hero__image">
+              <img src="assets/img/bidet.png" alt="Aquatec WC-Aufsatz mit automatischer Bidet Wascheinrichtung" />
+              <div class="image-glow"></div>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -136,6 +202,14 @@
           </div>
         </div>
       </section>
+
+        <!-- Secondary full-width banner -->
+        <section class="banner banner--alt" aria-label="Angebot">
+            <div class="container banner__content">
+                <h2>Qualität, die überzeugt</h2>
+                <p>Robuste Materialien, einfache Montage und zeitloses Design.</p>
+            </div>
+        </section>
 
       <!-- Bewertungen Slider -->
       <section id="bewertungen" class="section section--reviews" aria-labelledby="reviews-title">

@@ -130,3 +130,142 @@
   go(0);
   start();
 })();
+
+// Mobile Menu Functionality
+(function () {
+  const mobileToggle = document.querySelector('.mobile-menu-toggle');
+  const mobileMenu = document.querySelector('.mobile-menu');
+  const mobileClose = document.querySelector('.mobile-menu__close');
+  const mobileBackdrop = document.querySelector('.mobile-menu__backdrop');
+  const mobileLinks = document.querySelectorAll('.mobile-menu__link');
+  const body = document.body;
+
+  if (!mobileToggle || !mobileMenu) return;
+
+  // State tracking
+  let isOpen = false;
+
+  // Open menu
+  function openMenu() {
+    isOpen = true;
+    mobileToggle.classList.add('active');
+    mobileMenu.classList.add('active');
+    body.classList.add('mobile-menu-open');
+    
+    // Update ARIA attributes
+    mobileToggle.setAttribute('aria-expanded', 'true');
+    mobileToggle.setAttribute('aria-label', 'Menü schließen');
+    mobileMenu.setAttribute('aria-hidden', 'false');
+    
+    // Focus management - move focus to close button
+    setTimeout(() => {
+      if (mobileClose) mobileClose.focus();
+    }, 300);
+  }
+
+  // Close menu
+  function closeMenu() {
+    isOpen = false;
+    mobileToggle.classList.remove('active');
+    mobileMenu.classList.remove('active');
+    body.classList.remove('mobile-menu-open');
+    
+    // Update ARIA attributes
+    mobileToggle.setAttribute('aria-expanded', 'false');
+    mobileToggle.setAttribute('aria-label', 'Menü öffnen');
+    mobileMenu.setAttribute('aria-hidden', 'true');
+    
+    // Return focus to toggle button
+    mobileToggle.focus();
+  }
+
+  // Toggle menu
+  function toggleMenu() {
+    if (isOpen) {
+      closeMenu();
+    } else {
+      openMenu();
+    }
+  }
+
+  // Event listeners
+  if (mobileToggle) {
+    mobileToggle.addEventListener('click', toggleMenu);
+  }
+
+  if (mobileClose) {
+    mobileClose.addEventListener('click', closeMenu);
+  }
+
+  if (mobileBackdrop) {
+    mobileBackdrop.addEventListener('click', closeMenu);
+  }
+
+  // Close menu when clicking on links
+  mobileLinks.forEach(link => {
+    link.addEventListener('click', (e) => {
+      // For anchor links (internal navigation), close the menu
+      if (link.getAttribute('href').startsWith('#')) {
+        closeMenu();
+        
+        // Smooth scroll to target
+        const target = link.getAttribute('href');
+        const targetElement = document.querySelector(target);
+        if (targetElement) {
+          setTimeout(() => {
+            targetElement.scrollIntoView({ 
+              behavior: 'smooth',
+              block: 'start'
+            });
+          }, 300);
+        }
+      }
+      // For external links (like impressum.html), let default behavior happen
+    });
+  });
+
+  // Keyboard navigation
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && isOpen) {
+      closeMenu();
+    }
+  });
+
+  // Close menu on window resize if mobile breakpoint is exceeded
+  window.addEventListener('resize', () => {
+    if (window.innerWidth >= 768 && isOpen) {
+      closeMenu();
+    }
+  });
+
+  // Focus trap within mobile menu when open
+  document.addEventListener('keydown', (e) => {
+    if (!isOpen || e.key !== 'Tab') return;
+
+    const focusableElements = mobileMenu.querySelectorAll(
+      'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'
+    );
+    
+    const firstElement = focusableElements[0];
+    const lastElement = focusableElements[focusableElements.length - 1];
+
+    if (e.shiftKey) {
+      // Shift + Tab
+      if (document.activeElement === firstElement) {
+        lastElement.focus();
+        e.preventDefault();
+      }
+    } else {
+      // Tab
+      if (document.activeElement === lastElement) {
+        firstElement.focus();
+        e.preventDefault();
+      }
+    }
+  });
+
+  // Handle page load state
+  if (mobileMenu.classList.contains('active')) {
+    closeMenu();
+  }
+})();
