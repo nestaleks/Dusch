@@ -457,10 +457,6 @@ a:hover { text-decoration: underline; text-underline-offset: 3px; }
   z-index: 2;
 }
 
-.hero__image img:hover {
-  transform: scale(1.05);
-}
-
 .image-glow {
   position: absolute;
   top: 50%;
