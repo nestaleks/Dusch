@@ -269,3 +269,52 @@
     closeMenu();
   }
 })();
+
+// FAQ Accordion functionality
+(function () {
+  var faqQuestions = document.querySelectorAll('.faq-question');
+  
+  if (!faqQuestions.length) return;
+  
+  faqQuestions.forEach(function(question) {
+    question.addEventListener('click', function() {
+      var expanded = this.getAttribute('aria-expanded') === 'true';
+      var answerId = this.getAttribute('aria-controls');
+      var answer = document.getElementById(answerId);
+      
+      if (!answer) return;
+      
+      // Close all other FAQ items
+      faqQuestions.forEach(function(otherQuestion) {
+        if (otherQuestion !== question) {
+          var otherAnswerId = otherQuestion.getAttribute('aria-controls');
+          var otherAnswer = document.getElementById(otherAnswerId);
+          
+          otherQuestion.setAttribute('aria-expanded', 'false');
+          if (otherAnswer) {
+            otherAnswer.setAttribute('aria-hidden', 'true');
+          }
+        }
+      });
+      
+      // Toggle current FAQ item
+      if (expanded) {
+        // Close current
+        this.setAttribute('aria-expanded', 'false');
+        answer.setAttribute('aria-hidden', 'true');
+      } else {
+        // Open current
+        this.setAttribute('aria-expanded', 'true');
+        answer.setAttribute('aria-hidden', 'false');
+      }
+    });
+    
+    // Handle keyboard navigation
+    question.addEventListener('keydown', function(e) {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        this.click();
+      }
+    });
+  });
+})();
