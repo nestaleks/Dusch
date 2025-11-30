@@ -318,3 +318,57 @@
     });
   });
 })();
+
+// Scroll Animation - плавное появление элементов при прокрутке
+(function () {
+  // Проверка поддержки Intersection Observer
+  if (!('IntersectionObserver' in window)) {
+    // Fallback: просто показываем все элементы
+    var hiddenElements = document.querySelectorAll('.fade-in, .slide-in-left, .slide-in-right, .fade-in-up');
+    hiddenElements.forEach(function(el) {
+      el.classList.add('visible');
+    });
+    return;
+  }
+
+  // Настройки анимации
+  var animationOptions = {
+    threshold: 0.1, // Элемент должен быть виден на 10%
+    rootMargin: '0px 0px -50px 0px' // Анимация начинается за 50px до появления элемента
+  };
+
+  // Создаем наблюдатель
+  var observer = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        // Отключаем наблюдение после появления (оптимизация)
+        observer.unobserve(entry.target);
+      }
+    });
+  }, animationOptions);
+
+  // Находим все элементы с классами анимации
+  var animatedElements = document.querySelectorAll(
+    '.fade-in, .slide-in-left, .slide-in-right, .fade-in-up, .fade-in-delay'
+  );
+
+  // Начинаем наблюдение за элементами
+  animatedElements.forEach(function(el) {
+    observer.observe(el);
+  });
+
+  // Для секций добавляем класс автоматически
+  var sections = document.querySelectorAll('.section:not(.hero)');
+  sections.forEach(function(section) {
+    observer.observe(section);
+  });
+
+  // Анимация для элементов внутри секций
+  var innerElements = document.querySelectorAll(
+    '.card, .features-flow, .features-images img, .video-wrapper, .slider, .faq-item'
+  );
+  innerElements.forEach(function(el) {
+    observer.observe(el);
+  });
+})();

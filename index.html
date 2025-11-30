@@ -3,12 +3,16 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Dusch WC – Komfort und Mobilität</title>
-    <meta name="description" content="Puritas Gruppe Website für Dusch-WCs." />
+    <title>Aquatec – Komfort und Mobilität</title>
+    <meta name="description" content="Beige/hellbraun gestaltete Produktseite mit Bannern, Bewertungen-Slider und Impressum." />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
-    <link rel="icon" href="assets/img/logo.png" type="image/png"><link rel="stylesheet" href="assets/css/reset.css" />
+    <link rel="preload" href="assets/css/reset.css" as="style">
+    <link rel="preload" href="assets/css/style.css" as="style">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet"></noscript>
+    <link rel="icon" href="assets/img/logo.png" type="image/png">
+    <link rel="stylesheet" href="assets/css/reset.css" />
     <link rel="stylesheet" href="assets/css/style.css" />
   </head>
   <body>
@@ -16,7 +20,7 @@
     <header class="site-header" role="banner">
       <div class="container header__inner">
         <a class="logo" href="/">
-          <img src="assets/img/logo.png" alt="Puritas Gruppe Logo" />
+          <img src="assets/img/logo.png" alt="Aquatec Logo" />
         </a>
         
         <!-- Burger Button für Mobile -->
@@ -45,7 +49,7 @@
       <div class="mobile-menu__backdrop"></div>
       <nav class="mobile-menu__content" role="navigation" aria-label="Mobile Navigation">
         <div class="mobile-menu__header">
-          <img src="assets/img/logo.png" alt="Puritas Gruppe Logo" />
+          <img src="assets/img/logo.png" alt="Aquatec Logo" />
           <button class="mobile-menu__close" aria-label="Menü schließen">
             <span class="close-icon">×</span>
           </button>
@@ -53,37 +57,31 @@
         <ul class="mobile-menu__list">
           <li class="mobile-menu__item">
             <a href="#vorteile" class="mobile-menu__link">
-              <span class="mobile-menu__icon">✓</span>
               <span class="mobile-menu__text">Vorteile</span>
             </a>
           </li>
           <li class="mobile-menu__item">
             <a href="#leistung" class="mobile-menu__link">
-              <span class="mobile-menu__icon">🔧</span>
               <span class="mobile-menu__text">Leistungen</span>
             </a>
           </li>
           <li class="mobile-menu__item">
             <a href="#kosten" class="mobile-menu__link">
-              <span class="mobile-menu__icon">💰</span>
               <span class="mobile-menu__text">Kosten</span>
             </a>
           </li>
           <li class="mobile-menu__item">
             <a href="#process" class="mobile-menu__link">
-              <span class="mobile-menu__icon">📋</span>
               <span class="mobile-menu__text">Ablauf</span>
             </a>
           </li>
           <li class="mobile-menu__item">
             <a href="#faq" class="mobile-menu__link">
-              <span class="mobile-menu__icon">❓</span>
               <span class="mobile-menu__text">FAQ</span>
             </a>
           </li>
           <li class="mobile-menu__item">
             <a href="#anfrage" class="mobile-menu__link">
-              <span class="mobile-menu__icon">✉</span>
               <span class="mobile-menu__text">Kontakt</span>
             </a>
           </li>
@@ -91,7 +89,7 @@
         <div class="mobile-menu__footer">
           <div class="mobile-menu__contact">
             <p>Kontaktieren Sie uns:</p>
-            <a href="tel:+49123456789" class="mobile-menu__phone">📞 +49 123 456 789</a>
+            <a href="tel:+4903062866969" class="mobile-menu__phone">📞 +49 030 628 669 69</a>
           </div>
         </div>
       </nav>
@@ -109,7 +107,7 @@
                 <span class="badge-pulse"></span>
               </span>
               <div class="hero__image">
-                <img src="assets/img/bidet.png" alt="Dusch-WC mit automatischer Bidet Wascheinrichtung beheizt/beleuchtet. Fernbedienung/Lady Dusche Warmlufttrockner" />
+                <img src="assets/img/bidet.png" alt="Aquatec WC-Aufsatz mit automatischer Bidet Wascheinrichtung" />
               </div>
               <p class="hero-description">Dusch-WC mit automatischer Bidet Wascheinrichtung beheizt/beleuchtet. Fernbedienung/Lady Dusche Warmlufttrockner</p>
             </div>
@@ -128,8 +126,8 @@
                   <span class="btn-text">Jetzt anfragen</span>
                   <span class="btn-arrow">→</span>
                 </a>
-                <a href="tel:+49123456789" class="btn-outline">
-                  <span class="btn-text">tel: 030 628 669 69</span>
+                <a href="tel:+4903062866969" class="btn-outline">
+                  <span class="btn-text">tel: +49 030 628 669 69</span>
                 </a>
               </div>
             </div>
@@ -145,10 +143,11 @@
             <div class="video-container">
               <iframe
                 src="https://www.youtube.com/embed/dzouUSU8Dm0?si=n-pD3olLTh_vzI6d"
-                title="Dusch-WC mit automatischer Bidet Wascheinrichtung beheizt/beleuchtet."
+                title="Aquatec Pure - Produktvorführung"
                 frameborder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowfullscreen>
+                allowfullscreen
+                loading="lazy">
               </iframe>
             </div>
             <div class="video-info">
@@ -195,9 +194,9 @@
               </div>
               
               <div class="features-images">
-                <img src="assets/img/spray.jpg" alt="Montierter Dusch‑WC Aufsatz" />
-                <img src="assets/img/warm-seat.jpg" alt="Modernes Badezimmer mit Dusch‑WC" />
-                <img src="assets/img/warm-air.jpg" alt="Komfortfunktionen des Dusch‑WC" />
+                <img src="assets/img/spray.jpg" alt="Montierter Dusch‑WC Aufsatz" loading="lazy" />
+                <img src="assets/img/warm-seat.jpg" alt="Modernes Badezimmer mit Dusch‑WC" loading="lazy" />
+                <img src="assets/img/warm-air.jpg" alt="Komfortfunktionen des Dusch‑WC" loading="lazy" />
               </div>
             </div>
           </div>
@@ -333,52 +332,52 @@
           <div class="slider" data-autoplay="true" data-interval="5000">
             <div class="slider__track" role="list" aria-live="polite">
               <figure class="slide" role="listitem">
-                <img class="avatar" src="https://images.unsplash.com/photo-1544723795-3fb6469f5b39?q=80&w=96&h=96&auto=format&fit=crop&crop=faces" alt="Foto von Maria K." width="56" height="56">
+                <img class="avatar" src="https://images.unsplash.com/photo-1544723795-3fb6469f5b39?q=80&w=96&h=96&auto=format&fit=crop&crop=faces" alt="Foto von Maria K." width="56" height="56" loading="lazy">
                 <blockquote>Sehr komfortabel und hochwertig verarbeitet. Der Alltag ist spürbar leichter!</blockquote>
                 <figcaption>Maria K.</figcaption>
               </figure>
               <figure class="slide" role="listitem">
-                <img class="avatar" src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?q=80&w=96&h=96&auto=format&fit=crop&crop=faces" alt="Foto von Thomas R." width="56" height="56">
+                <img class="avatar" src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?q=80&w=96&h=96&auto=format&fit=crop&crop=faces" alt="Foto von Thomas R." width="56" height="56" loading="lazy">
                 <blockquote>Die Montage war kinderleicht. Absolut empfehlenswert.</blockquote>
                 <figcaption>Thomas R.</figcaption>
               </figure>
               <figure class="slide" role="listitem">
-                <img class="avatar" src="https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?q=80&w=96&h=96&auto=format&fit=crop&crop=faces" alt="Foto von Elena S." width="56" height="56">
+                <img class="avatar" src="https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?q=80&w=96&h=96&auto=format&fit=crop&crop=faces" alt="Foto von Elena S." width="56" height="56" loading="lazy">
                 <blockquote>Sieht gut aus und funktioniert tadellos. Genau das, was wir gesucht haben.</blockquote>
                 <figcaption>Elena S.</figcaption>
               </figure>
               <figure class="slide" role="listitem">
-                <img class="avatar" src="https://images.unsplash.com/photo-1523495336167-c3f93c6ae1ef?q=80&w=96&h=96&auto=format&fit=crop&crop=faces" alt="Foto von Daniel P." width="56" height="56">
+                <img class="avatar" src="https://images.unsplash.com/photo-1523495336167-c3f93c6ae1ef?q=80&w=96&h=96&auto=format&fit=crop&crop=faces" alt="Foto von Daniel P." width="56" height="56" loading="lazy">
                 <blockquote>Hervorragender Service und schnelle Lieferung. Immer wieder gern.</blockquote>
                 <figcaption>Daniel P.</figcaption>
               </figure>
               <figure class="slide" role="listitem">
-                <img class="avatar" src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?q=80&w=96&h=96&auto=format&fit=crop&crop=faces" alt="Foto von Anja L." width="56" height="56">
+                <img class="avatar" src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?q=80&w=96&h=96&auto=format&fit=crop&crop=faces" alt="Foto von Anja L." width="56" height="56" loading="lazy">
                 <blockquote>Sehr wertige Verarbeitung, fühlt sich sicher und stabil an.</blockquote>
                 <figcaption>Anja L.</figcaption>
               </figure>
               <figure class="slide" role="listitem">
-                <img class="avatar" src="https://images.unsplash.com/photo-1546453660-440b2d3fb9b1?q=80&w=96&h=96&auto=format&fit=crop&crop=faces" alt="Foto von Ralf B." width="56" height="56">
+                <img class="avatar" src="https://images.unsplash.com/photo-1546453660-440b2d3fb9b1?q=80&w=96&h=96&auto=format&fit=crop&crop=faces" alt="Foto von Ralf B." width="56" height="56" loading="lazy">
                 <blockquote>Preis‑Leistung top. Meine Erwartungen wurden übertroffen.</blockquote>
                 <figcaption>Ralf B.</figcaption>
               </figure>
               <figure class="slide" role="listitem">
-                <img class="avatar" src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=96&h=96&auto=format&fit=crop&crop=faces" alt="Foto von Sophie W." width="56" height="56">
+                <img class="avatar" src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=96&h=96&auto=format&fit=crop&crop=faces" alt="Foto von Sophie W." width="56" height="56" loading="lazy">
                 <blockquote>Design passt perfekt ins Bad. Dezent und edel.</blockquote>
                 <figcaption>Sophie W.</figcaption>
               </figure>
               <figure class="slide" role="listitem">
-                <img class="avatar" src="https://images.unsplash.com/photo-1502685104226-ee32379fefbe?q=80&w=96&h=96&auto=format&fit=crop&crop=faces" alt="Foto von Jonas F." width="56" height="56">
+                <img class="avatar" src="https://images.unsplash.com/photo-1502685104226-ee32379fefbe?q=80&w=96&h=96&auto=format&fit=crop&crop=faces" alt="Foto von Jonas F." width="56" height="56" loading="lazy">
                 <blockquote>Sehr bequem, insbesondere für ältere Familienmitglieder hilfreich.</blockquote>
                 <figcaption>Jonas F.</figcaption>
               </figure>
               <figure class="slide" role="listitem">
-                <img class="avatar" src="https://images.unsplash.com/photo-1547425260-76bcadfb4f2c?q=80&w=96&h=96&auto=format&fit=crop&crop=faces" alt="Foto von Klara H." width="56" height="56">
+                <img class="avatar" src="https://images.unsplash.com/photo-1547425260-76bcadfb4f2c?q=80&w=96&h=96&auto=format&fit=crop&crop=faces" alt="Foto von Klara H." width="56" height="56" loading="lazy">
                 <blockquote>Einfache Reinigung – spart wirklich Zeit und Nerven.</blockquote>
                 <figcaption>Klara H.</figcaption>
               </figure>
               <figure class="slide" role="listitem">
-                <img class="avatar" src="https://images.unsplash.com/photo-1527980965255-d3b416303d12?q=80&w=96&h=96&auto=format&fit=crop&crop=faces" alt="Foto von Peter S." width="56" height="56">
+                <img class="avatar" src="https://images.unsplash.com/photo-1527980965255-d3b416303d12?q=80&w=96&h=96&auto=format&fit=crop&crop=faces" alt="Foto von Peter S." width="56" height="56" loading="lazy">
                 <blockquote>Super Kundensupport. Alle Fragen wurden schnell geklärt.</blockquote>
                 <figcaption>Peter S.</figcaption>
               </figure>
@@ -587,6 +586,6 @@
       </div>
     </footer>
 
-    <script src="assets/js/main.js"></script>
+    <script src="assets/js/main.js" defer></script>
   </body>
   </html>

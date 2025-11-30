@@ -7,7 +7,10 @@
     <meta name="description" content="Allgemeine Geschäftsbedingungen (AGB) von Puritas Gruppe." />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+    <link rel="preload" href="assets/css/reset.css" as="style">
+    <link rel="preload" href="assets/css/style.css" as="style">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet"></noscript>
     <link rel="icon" href="assets/img/logo.png" type="image/png">
     <link rel="stylesheet" href="assets/css/reset.css" />
     <link rel="stylesheet" href="assets/css/style.css" />
@@ -55,37 +58,31 @@
         <ul class="mobile-menu__list">
           <li class="mobile-menu__item">
             <a href="index.html#vorteile" class="mobile-menu__link">
-              <span class="mobile-menu__icon">✓</span>
               <span class="mobile-menu__text">Vorteile</span>
             </a>
           </li>
           <li class="mobile-menu__item">
             <a href="index.html#leistung" class="mobile-menu__link">
-              <span class="mobile-menu__icon">🔧</span>
               <span class="mobile-menu__text">Leistungen</span>
             </a>
           </li>
           <li class="mobile-menu__item">
             <a href="index.html#kosten" class="mobile-menu__link">
-              <span class="mobile-menu__icon">💰</span>
               <span class="mobile-menu__text">Kosten</span>
             </a>
           </li>
           <li class="mobile-menu__item">
             <a href="index.html#process" class="mobile-menu__link">
-              <span class="mobile-menu__icon">📋</span>
               <span class="mobile-menu__text">Ablauf</span>
             </a>
           </li>
           <li class="mobile-menu__item">
             <a href="index.html#faq" class="mobile-menu__link">
-              <span class="mobile-menu__icon">❓</span>
               <span class="mobile-menu__text">FAQ</span>
             </a>
           </li>
           <li class="mobile-menu__item">
             <a href="index.html#anfrage" class="mobile-menu__link">
-              <span class="mobile-menu__icon">✉</span>
               <span class="mobile-menu__text">Kontakt</span>
             </a>
           </li>
@@ -93,7 +90,7 @@
         <div class="mobile-menu__footer">
           <div class="mobile-menu__contact">
             <p>Kontaktieren Sie uns:</p>
-            <a href="tel:+49123456789" class="mobile-menu__phone">📞 +49 123 456 789</a>
+            <a href="tel:+4903062866969" class="mobile-menu__phone">📞 +49 030 628 669 69</a>
           </div>
         </div>
       </nav>
@@ -102,7 +99,7 @@
     <main id="main">
       <section class="section section--legal">
         <div class="container">
-          <h1>Allgemeine Geschäftsbedingungen (AGB)</h1>
+          <h2>Allgemeine Geschäftsbedingungen (AGB)</h2>
 
           <div class="legal-content">
             <h2>§1 Geltungsbereich</h2>
@@ -166,6 +163,6 @@
       </div>
     </footer>
 
-    <script src="assets/js/main.js"></script>
+    <script src="assets/js/main.js" defer></script>
   </body>
   </html>

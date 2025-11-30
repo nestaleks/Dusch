@@ -896,7 +896,6 @@ a:hover {
 /* Equal height columns for Features on ≥1024px */
 @media (min-width: 1024px) {
   .section--features .features-flow { align-items: stretch; }
-  
 }
 
 /* Stack on mobile */
@@ -2004,6 +2003,7 @@ a:hover {
 }
 
 .legal-content a {
+  color: var(--color-primary);
   text-decoration: underline;
 }
 
@@ -2528,7 +2528,126 @@ a:hover {
   }
 }
 
+/* Scroll Animations - плавное появление элементов при прокрутке */
+.fade-in,
+.slide-in-left,
+.slide-in-right,
+.fade-in-up,
+.fade-in-delay {
+  opacity: 0;
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.fade-in {
+  transform: translateY(20px);
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.slide-in-left {
+  transform: translateX(-50px);
+}
+
+.slide-in-left.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.slide-in-right {
+  transform: translateX(50px);
+}
+
+.slide-in-right.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.fade-in-up {
+  transform: translateY(40px);
+}
+
+.fade-in-up.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.fade-in-delay {
+  transform: translateY(30px);
+}
+
+.fade-in-delay.visible {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 0.2s;
+}
+
+/* Применяем анимацию к секциям автоматически */
+.section:not(.hero) {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.section:not(.hero).visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Анимация для карточек и элементов внутри секций */
+.card,
+.features-flow,
+.features-images img,
+.video-wrapper,
+.slider,
+.faq-item {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.card.visible,
+.features-flow.visible,
+.features-images img.visible,
+.video-wrapper.visible,
+.slider.visible,
+.faq-item.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Задержка для элементов внутри секций */
+.features-images img:nth-child(2) {
+  transition-delay: 0.1s;
+}
+
+.features-images img:nth-child(3) {
+  transition-delay: 0.2s;
+}
+
 /* Motion preferences */
 @media (prefers-reduced-motion: reduce) {
-  * { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
+  * { 
+    animation: none !important; 
+    transition: none !important; 
+    scroll-behavior: auto !important; 
+  }
+  
+  .fade-in,
+  .slide-in-left,
+  .slide-in-right,
+  .fade-in-up,
+  .fade-in-delay,
+  .section:not(.hero),
+  .card,
+  .features-flow,
+  .features-images img,
+  .video-wrapper,
+  .slider,
+  .faq-item {
+    opacity: 1 !important;
+    transform: none !important;
+  }
 }
