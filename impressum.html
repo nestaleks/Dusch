@@ -3,12 +3,13 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Impressum – Aquatec</title>
-    <meta name="description" content="Impressum und Kontaktangaben von Aquatec." />
+    <title>Impressum – Puritas Gruppe</title>
+    <meta name="description" content="Impressum und Kontaktangaben von Puritas Gruppe." />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
-    <link rel="icon" href="assets/img/logo.svg" type="image/svg+xml">
+    <link rel="icon" href="assets/img/logo.png" type="image/png">
+    <link rel="stylesheet" href="assets/css/reset.css" />
     <link rel="stylesheet" href="assets/css/style.css" />
   </head>
   <body>
@@ -16,18 +17,86 @@
     <header class="site-header" role="banner">
       <div class="container header__inner">
         <a class="logo" href="/">
-          <img src="assets/img/logo.svg" alt="Aquatec Logo" width="140" height="36" />
+          <img src="assets/img/logo.png" alt="Puritas Gruppe Logo" />
         </a>
-        <nav class="nav" aria-label="Hauptnavigation">
+
+        <!-- Burger Button für Mobile -->
+        <button class="mobile-menu-toggle" aria-label="Menü öffnen" aria-expanded="false" aria-controls="mobile-menu">
+          <span class="burger-line"></span>
+          <span class="burger-line"></span>
+          <span class="burger-line"></span>
+        </button>
+
+        <!-- Desktop Navigation -->
+        <nav class="nav nav--desktop" aria-label="Hauptnavigation">
           <ul>
             <li><a href="index.html#vorteile">Vorteile</a></li>
-            <li><a href="index.html#bewertungen">Bewertungen</a></li>
+            <li><a href="index.html#leistung">Leistungen</a></li>
+            <li><a href="index.html#kosten">Kosten</a></li>
+            <li><a href="index.html#process">Ablauf</a></li>
+            <li><a href="index.html#faq">FAQ</a></li>
             <li><a href="index.html#anfrage">Kontakt</a></li>
-            <li><a aria-current="page">Impressum</a></li>
           </ul>
         </nav>
       </div>
     </header>
+
+    <!-- Mobile Navigation Overlay - same as on homepage -->
+    <div class="mobile-menu" id="mobile-menu" aria-hidden="true">
+      <div class="mobile-menu__backdrop"></div>
+      <nav class="mobile-menu__content" role="navigation" aria-label="Mobile Navigation">
+        <div class="mobile-menu__header">
+          <img src="assets/img/logo.png" alt="Puritas Gruppe Logo" />
+          <button class="mobile-menu__close" aria-label="Menü schließen">
+            <span class="close-icon">×</span>
+          </button>
+        </div>
+        <ul class="mobile-menu__list">
+          <li class="mobile-menu__item">
+            <a href="index.html#vorteile" class="mobile-menu__link">
+              <span class="mobile-menu__icon">✓</span>
+              <span class="mobile-menu__text">Vorteile</span>
+            </a>
+          </li>
+          <li class="mobile-menu__item">
+            <a href="index.html#leistung" class="mobile-menu__link">
+              <span class="mobile-menu__icon">🔧</span>
+              <span class="mobile-menu__text">Leistungen</span>
+            </a>
+          </li>
+          <li class="mobile-menu__item">
+            <a href="index.html#kosten" class="mobile-menu__link">
+              <span class="mobile-menu__icon">💰</span>
+              <span class="mobile-menu__text">Kosten</span>
+            </a>
+          </li>
+          <li class="mobile-menu__item">
+            <a href="index.html#process" class="mobile-menu__link">
+              <span class="mobile-menu__icon">📋</span>
+              <span class="mobile-menu__text">Ablauf</span>
+            </a>
+          </li>
+          <li class="mobile-menu__item">
+            <a href="index.html#faq" class="mobile-menu__link">
+              <span class="mobile-menu__icon">❓</span>
+              <span class="mobile-menu__text">FAQ</span>
+            </a>
+          </li>
+          <li class="mobile-menu__item">
+            <a href="index.html#anfrage" class="mobile-menu__link">
+              <span class="mobile-menu__icon">✉</span>
+              <span class="mobile-menu__text">Kontakt</span>
+            </a>
+          </li>
+        </ul>
+        <div class="mobile-menu__footer">
+          <div class="mobile-menu__contact">
+            <p>Kontaktieren Sie uns:</p>
+            <a href="tel:+49123456789" class="mobile-menu__phone">📞 +49 123 456 789</a>
+          </div>
+        </div>
+      </nav>
+    </div>
 
     <main id="main" class="section">
       <div class="container">
@@ -35,26 +104,44 @@
         <p>Angaben gemäß § 5 TMG</p>
         <div class="card" style="margin-top:16px;">
           <h2>Betreiber der Website</h2>
-          <p>Aquatec Muster GmbH<br>
-          Musterstraße 12<br>
-          12345 Musterstadt<br>
+
+          <p><strong>Firmenname:</strong><br>
+          DECKTUM GmbH</p>
+            <br>
+          <p><strong>Anschrift:</strong><br>
+          Hauptstraße 117<br>
+          10827 Berlin<br>
           Deutschland</p>
-
-          <p><strong>Kontakt</strong><br>
-          Telefon: +49 (0) 123 456789<br>
-          E-Mail: kontakt@aquatec.example</p>
-
-          <p><strong>Vertreten durch</strong><br>
-          Max Mustermann (Geschäftsführer)</p>
-
-          <p><strong>Umsatzsteuer-ID</strong><br>
-          DE123456789</p>
-
+            <br>
+          <p><strong>Vertreten durch die Geschäftsführerin:</strong><br>
+          Frau Monika Szejna</p>
+            <br>
+          <p><strong>Kontakt:</strong><br>
+          Telefon: +49 1575 390 1785<br>
+          E-Mail: <a href="mailto:info@decktum.com">info@decktum.com</a><br>
+          Website: <a href="https://www.decktum.com" target="_blank" rel="noopener">www.decktum.com</a></p>
+            <br>
+          <p><strong>Registereintrag:</strong><br>
+          Eingetragen im Handelsregister<br>
+          Registergericht: Amtsgericht Krefeld<br>
+          Registernummer: HRB 20530</p>
+            <br>
+          <p><strong>USt-IdNr.:</strong> DE458320883<br>
+          <strong>Steuernummer:</strong><br>
+          beantragt</p>
+            <br>
+          <p><strong>Verantwortlich für den Inhalt nach § 55 Abs. 2 RStV:</strong><br>
+          Frau Monika Szejna, Anschrift wie oben</p>
+            <br>
           <h2>Haftungsausschluss</h2>
           <p>Die Inhalte dieser Seite wurden mit größter Sorgfalt erstellt. Für die Richtigkeit, Vollständigkeit und Aktualität der Inhalte können wir jedoch keine Gewähr übernehmen.</p>
 
           <h2>Urheberrecht</h2>
           <p>Die durch die Seitenbetreiber erstellten Inhalte und Werke auf diesen Seiten unterliegen dem deutschen Urheberrecht.</p>
+        </div>
+
+        <div class="back-link">
+          <a href="index.html" class="btn btn-primary">Zurück zur Hauptseite</a>
         </div>
       </div>
     </main>
@@ -62,22 +149,18 @@
     <footer class="site-footer" role="contentinfo">
       <div class="container footer__top">
         <a class="logo" href="/">
-          <img src="assets/img/logo.svg" alt="Aquatec Logo" width="140" height="36" />
+          <img src="assets/img/logo.png" alt="Logo" />
         </a>
-        <ul class="social" aria-label="Soziale Netzwerke">
-          <li><a href="#" aria-label="Facebook" title="Facebook">
-            <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path d="M13.5 9H16V6h-2.5C11.6 6 11 7.4 11 9v2H9v3h2v7h3v-7h2.2l.3-3H14V9.5c0-.3.2-.5.5-.5z" fill="currentColor"/></svg>
-          </a></li>
-          <li><a href="#" aria-label="Instagram" title="Instagram">
-            <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5zm0 2a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3H7zm5 3.5a5.5 5.5 0 1 1 0 11 5.5 5.5 0 0 1 0-11zm0 2a3.5 3.5 0 1 0 0 7 3.5 3.5 0 0 0 0-7zm6.2-.9a1.1 1.1 0 1 1 0 2.2 1.1 1.1 0 0 1 0-2.2z" fill="currentColor"/></svg>
-          </a></li>
-          <li><a href="#" aria-label="YouTube" title="YouTube">
-            <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path d="M23 8.5s-.2-1.7-.9-2.5c-.9-.9-1.9-.9-2.4-1C16.7 4.7 12 4.7 12 4.7h0s-4.7 0-7.7.3c-.5.1-1.5.1-2.4 1C.2 6.8 0 8.5 0 8.5S0 10.4 0 12v1.5s.2 1.7.9 2.5c.9.9 2.1.9 2.7 1 2 .2 8.4.3 8.4.3s4.7 0 7.7-.3c.5-.1 1.5-.1 2.4-1 .7-.8.9-2.5.9-2.5V12s0-1.9 0-3.5zM9.6 14.7V9.3L15.6 12l-6 2.7z" fill="currentColor"/></svg>
-          </a></li>
-        </ul>
+        <nav class="footer-nav" aria-label="Rechtliche Seiten">
+          <ul class="footer-links">
+            <li><a href="impressum.html" aria-current="page">Impressum</a></li>
+            <li><a href="datenschutzerklaerung.html">Datenschutzerklärung</a></li>
+            <li><a href="agb.html">Allgemeine Geschäftsbedingungen</a></li>
+          </ul>
+        </nav>
       </div>
       <div class="container footer__bottom">
-        <p>© <span id="year"></span> Aquatec. Alle Rechte vorbehalten. <a href="impressum.html" aria-current="page">Impressum</a></p>
+        <p>© <span id="year"></span> Alle Rechte vorbehalten.</p>
       </div>
     </footer>
 

@@ -1,4 +1,3 @@
-# Aquatec
 
 This repository contains a small responsive website built to resemble the structure of the referenced product page, styled with beige and light-brown tones. It includes:
 
