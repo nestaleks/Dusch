@@ -1181,7 +1181,7 @@ a:hover {
 
 .leistung-grid {
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
   gap: var(--spacing-xl);
   margin-top: var(--spacing-xl);
   align-items: stretch;
@@ -1457,13 +1457,12 @@ a:hover {
   grid-template-columns: 1fr 1fr;
   gap: var(--spacing-xl);
   align-items: center;
-    margin-bottom: 15px;
 }
 
 .video-container {
   position: relative;
   width: 100%;
-  height: 0;
+  height: auto;
   padding-bottom: 56.25%; /* 16:9 aspect ratio */
   border-radius: var(--radius);
   overflow: hidden;
@@ -1479,6 +1478,11 @@ a:hover {
   height: 100%;
   border: none;
 }
+.video-subtitle{
+    margin-top: 10px;
+    font-size: 12px;
+}
+
 
 .video-info {
   text-align: center;
@@ -2192,11 +2196,7 @@ a:hover {
   .features-summary p {
     font-size: 1.1rem; /* compact */
   }
-  
-  /* Leistung Section */
-  .leistung-grid {
-    grid-template-columns: repeat(3, 1fr);
-  }
+
   
   .leistung-card {
     min-height: 380px;
@@ -2412,6 +2412,11 @@ a:hover {
     top: 50px;
     bottom: -36px;
   }
+
+    /* Leistung Section */
+    .leistung-grid {
+        grid-template-columns: 1fr;
+    }
   
   .contact-link {
     justify-content: center;
