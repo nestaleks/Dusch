@@ -1,0 +1,45 @@
+/* 
+ * Main CSS File - Dusch Project
+ * This file imports all CSS modules in the correct order
+ * All HTML files should reference this single CSS file
+ * 
+ * Modular Structure:
+ * 1. Variables - CSS custom properties
+ * 2. Reset - Browser reset (kept separate)  
+ * 3. Base - Typography, basic elements
+ * 4. Layout - Header, footer, navigation
+ * 5. Components - Buttons, cards, forms
+ * 6. Sections - Hero, features, etc.
+ * 7. Leistung - Service sections 
+ * 8. Reviews - Reviews slider & FAQ
+ * 9. Legal - Legal pages & animations
+ */
+
+/* 1. CSS Variables - MUST BE FIRST */
+@import url('assets/css/variables.css');
+
+/* 2. Base Styles */
+@import url('assets/css/base.css');
+
+/* 3. Layout Components */
+@import url('assets/css/layout.css');
+
+/* 4. Reusable Components */
+@import url('assets/css/components.css');
+
+/* 5. Main Sections */
+@import url('assets/css/sections.css');
+
+/* 6. Service Sections */
+@import url('assets/css/leistung.css');
+
+/* 7. Reviews & FAQ */
+@import url('assets/css/reviews.css');
+
+/* 8. Legal Pages & Animations */
+@import url('assets/css/legal.css');
+
+/* 
+ * Note: CSS Reset is kept as separate file (assets/css/reset.css)
+ * and should be loaded before this file in HTML
+ */

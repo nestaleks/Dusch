@@ -1,0 +1,113 @@
+/* Base Styles & Typography */
+* { 
+  box-sizing: border-box; 
+  margin: 0;
+  padding: 0;
+}
+
+html { 
+  scroll-behavior: smooth; 
+  font-size: 16px;
+}
+
+body {
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+  color: var(--color-text);
+  background: var(--color-bg);
+  line-height: 1.6;
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  overflow-x: hidden;
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: -0.025em;
+  margin-bottom: var(--spacing-sm);
+  color: var(--color-text);
+}
+
+h1 { 
+  font-size: clamp(2rem, 5vw, 3.5rem); 
+  font-weight: 700;
+  margin-bottom: var(--spacing-md);
+}
+
+h2 { 
+  font-size: clamp(1.5rem, 4vw, 2.5rem); 
+  margin-bottom: var(--spacing-md);
+}
+
+h3 { 
+  font-size: clamp(1.25rem, 3vw, 1.875rem); 
+  margin-bottom: var(--spacing-sm);
+}
+
+p {
+  margin-bottom: var(--spacing-md);
+  line-height: 1.7;
+  color: var(--color-muted);
+}
+
+/* Base transitions for all interactive elements */
+a, button, input, textarea, select {
+  transition: var(--transition);
+}
+
+/* Focus states */
+:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+a {
+  color: var(--color-primary-dark);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.skip-link {
+  position: absolute;
+  left: -9999px;
+}
+
+.skip-link:focus {
+  left: 12px;
+  top: 12px;
+  background: #fff;
+  color: #000;
+  padding: 8px 12px;
+  border-radius: 6px;
+  z-index: 1000;
+}
+
+.container {
+  width: min(100% - 32px, var(--container));
+  margin: 0 auto;
+}
+
+/* Utilities */
+.visually-hidden { 
+  position: absolute !important; 
+  clip: rect(1px, 1px, 1px, 1px); 
+  padding: 0 !important; 
+  border: 0 !important; 
+  height: 1px !important; 
+  width: 1px !important; 
+  overflow: hidden; 
+}

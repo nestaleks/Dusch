@@ -1,0 +1,43 @@
+/* CSS Variables - Beige & Light Brown Theme */
+:root {
+  /* Beige & Light Brown Color Palette */
+  --color-bg: #faf8f5;           /* warm ivory */
+  --color-bg-alt: #f5f1ec;       /* light beige */
+  --color-surface: #ffffff;      /* pure white */
+  --color-border: #e8ddd0;       /* soft beige border */
+  --color-primary: #d4a574;      /* warm beige */
+  --color-primary-dark: #b8956b; /* deeper beige */
+  --color-secondary: #c19660;    /* light brown */
+  --color-accent: #8b7355;       /* darker brown accent */
+  --color-text: #4a3f36;         /* dark brown */
+  --color-muted: #7a6b5d;        /* muted brown */
+  --color-light: #fcfaf8;        /* very light cream */
+
+  /* Gradients */
+  --gradient-primary: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
+  --gradient-accent: linear-gradient(135deg, var(--color-accent) 0%, var(--color-primary) 100%);
+  --gradient-hero: linear-gradient(135deg, #d4a574 0%, #c19660 50%, #b8956b 100%);
+
+  /* Shape & shadow */
+  --radius: 16px;
+  --radius-sm: 8px;
+  --radius-lg: 24px;
+  --shadow-soft: 0 4px 6px rgba(0,0,0,0.05), 0 1px 3px rgba(0,0,0,0.1);
+  --shadow-medium: 0 10px 15px rgba(0,0,0,0.1), 0 4px 6px rgba(0,0,0,0.05);
+  --shadow-large: 0 20px 25px rgba(0,0,0,0.1), 0 10px 10px rgba(0,0,0,0.04);
+  --shadow-focus: 0 0 0 3px rgba(212,165,116,0.25);
+
+  /* Animation */
+  --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-slow: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+
+  /* Layout */
+  --container: 1400px;
+  --spacing-xs: 0.5rem;
+  --spacing-sm: 1rem;
+  --spacing-md: 1.5rem;
+  --spacing-lg: 2rem;
+  --spacing-xl: 3rem;
+  --spacing-2xl: 4rem;
+  --spacing-3xl: 5rem;
+}
